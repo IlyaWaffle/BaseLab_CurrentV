@@ -9,7 +9,8 @@ using namespace std;
 int main() {
     setlocale(LC_ALL, "rus");
 
-    cout << "Введите количество билетов";
+    cout << "Добро пожаловать\n";
+    cout << "Введите количество билетов: ";
     int n;
     cin >> n;
 
