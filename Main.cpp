@@ -15,10 +15,6 @@ int main() {
 
     TicketArray ticket(n);
 
-
-
-
-
     int i;
     while (1) {
         i = menu();
