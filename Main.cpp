@@ -37,13 +37,11 @@ int main() {
             char name[25];
 
             cout << "¬ведите параметры  билета, который хотите изменить : " << endl;
-            //cin >> name;
             Ticket* Old = new Ticket;
             Old->inputAll();
             cout << "¬ведите параметры нового билета : " << endl;
             Ticket* New = new Ticket;
             New->inputAll();
-            // ticket.replace1(ticket.search1((MyString)((char*)name)));
             ticket.replace(Old, New);
         }
               break;

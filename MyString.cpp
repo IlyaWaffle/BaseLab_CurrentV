@@ -3,8 +3,6 @@
 #include <string>
 #include <iostream>
 
-//#pragma warning(disable : 4996)
-
 using namespace std;
 
 MyString::MyString()
@@ -22,13 +20,6 @@ MyString::MyString(char* t)
 	for (int i = 0; i < n; i++)
 		s[i] = t[i];
 	len = n;
-
-	/*s = new char[strlen(t)];
-	for (size_t i = 0; i < strlen(t); i++)
-	{
-		s[i] = t[i];
-	}
-	len = strlen(t);*/
 }
 MyString::MyString(const char t[])
 {
@@ -40,12 +31,6 @@ MyString::MyString(const char t[])
 	for (int i = 0; i < n; i++)
 		s[i] = t[i];
 	len = n;
-	/*s = new char[strlen(t)];
-	for (size_t i = 0; i < strlen(t); i++)
-	{
-		s[i] = t[i];
-	}
-	len = strlen(t);*/
 }
 MyString::MyString(const MyString& u)
 {
@@ -57,10 +42,6 @@ MyString::MyString(const MyString& u)
 	for (int i = 0; i < n; i++)
 		s[i] = u.s[i];
 	len = n;
-
-	/*s = new char[u.len];
-	strcpy(s, u.s);
-	len = u.len;*/
 }
 MyString::~MyString()
 {
@@ -106,22 +87,7 @@ int MyString::input()
 	*s = '\0';
 	for (int i = 0; i < len; i++)
 		s[i] = buf1[i];
-	//strcpy(s, buf1);
 	return 0;
-
-	/*if (cin.eof()) return 0;
-	char buf1[256];
-	cin.getline(buf1, 254, '\n');
-	int n = strlen(buf1);
-	if (strlen(buf1) == 0) cin.getline(buf1, 254, '\n');
-	//while (buf1[n] != NULL && buf1[n] != '\0' && buf1[n] != '\n')
-		//n++;
-	//delete[] s;
-	s = new char[strlen(buf1)];
-	len = n;
-	for (int i = 0; i < len; i++)
-		s[i] = buf1[i];
-	return 0;*/
 }
 void MyString::output() {
 	for (int i = 0; i < len; i++)
