@@ -9,9 +9,11 @@ using namespace std;
 int main() {
     setlocale(LC_ALL, "rus");
 
+    cout << "Введите количество билетов";
+    int n;
+    cin >> n;
 
-
-    TicketArray ticket(3);
+    TicketArray ticket(n);
 
 
 
