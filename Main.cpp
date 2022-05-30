@@ -44,13 +44,13 @@ int main() {
         case 4: {
             char name[25];
             cout << "Введите имя препарата: " << endl;
-            cin >> name;
             if (medicines.search3((MyString)((char*)name)))
             {
-
                 cout << "Препарат " << name << " найден" << endl;
-                cout << "Его номер в списке " << medicines.search3((MyString)((char*)name)) << endl;
+                cout << "Его номер в списке " << medicines.search2((MyString)((char*)name)) << endl;
             }
+            else
+                cout << "Такого препарата не найдено" << endl;
         }
               break;
         case 5: {
