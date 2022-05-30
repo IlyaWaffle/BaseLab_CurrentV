@@ -53,6 +53,7 @@ void Medicine::inputAll()
 	cin >> this->price;
 	cout << endl;
 
+	cout << "Введите дату поставки" << endl;
 	this->date.input();
 }
 
@@ -70,7 +71,7 @@ void Medicine::OutputAll()
 	cout << endl << "Количество: \t";
 	cout << this->count;
 
-	cout << endl << "Срок годности: \t";
+	cout << endl << "Дата поставки: \t";
 	this->date.output();
 }
 

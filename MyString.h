@@ -22,13 +22,4 @@ public:
     int input();
     void output();
 
-    friend ostream& operator<< (ostream& out, MyString& right) {
-        for (int i = 0; i < right.len; i++)
-            out << right.s[i];
-        return out;
-    }
-    char* operator+ (const MyString& right);
-    MyString& operator= (const MyString& right);
-    MyString& operator+= (const MyString& right);
-    bool operator==(const MyString& right);
 };

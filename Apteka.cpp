@@ -6,15 +6,15 @@ using namespace std;
 
 int menu() {
 	int a;
-	cout << endl << "***********MENU***********" << endl;
-	cout << "(1) Добавление" << endl;
-	cout << "(2) Печать на экран" << endl;
-	cout << "(3) Изменение" << endl;
-	cout << "(4) Проверка на существование" << endl;
-	cout << "(5) Сортировка" << endl;
-	cout << "(6) Удаление" << endl;
+	cout << endl << "----Apteka----" << endl;
+	cout << "(1) Добавить новый препарат" << endl;
+	cout << "(2) Вывести все препараты" << endl;
+	cout << "(3) Измененить препарат" << endl;
+	cout << "(4) Проверить на существование" << endl;
+	cout << "(5) Сортировать по количеству" << endl;
+	cout << "(6) Удалить" << endl;
 	cout << "(7) Выход из программы" << endl;
-	cout << "***************************" << endl;
+	cout << "--------------" << endl;
 	cout << "Выберите номер команды: ";
 	string temp;
 	cin >> temp;
@@ -41,17 +41,17 @@ int Apteka::input() {
 	a->inputAll();
 	cur = this->insert(a);
 	return cur - begin();
-
-	cout << "=================================" << endl;
+	        
+	cout << "--------------------------" << endl;
 }
 
 
 //вывод
 void Apteka::output() {
-	cout << "=================================" << endl;
+	cout << "--------------------------" << endl;
 	for (T** t = begin(); t != cur; t++) {
 		(*t)->OutputAll();
-		cout << "=================================" << endl;
+		cout << "--------------------------" << endl;
 	}
 }
 
@@ -189,16 +189,6 @@ int Apteka::replace1(int index)
 	*(v.begin() + index) = rep;
 
 	return 0;
-
-	/*int n = 0;
-	for (int i = 0; i < lenght(); i++)
-		if ((v.item(i))->cmp(Old) == 0)
-		{
-			v.item(i) = New->copy(); n++;
-
-		}
-	if (n == 0) return 0;
-	return 1;*/
 }
 
 T* Apteka::search2(MyString a)
