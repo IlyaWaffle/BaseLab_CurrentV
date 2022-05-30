@@ -1,5 +1,5 @@
-#include "Ticket.h"
-#include "TicketTable.h"
+#include "Medicine.h"
+#include "Apteka.h"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -27,13 +27,13 @@ int menu() {
 	return a;
 }
 
-TicketArray::TicketArray(int sz) :v(sz) {
+Apteka::Apteka(int sz) :v(sz) {
 	cur = begin();
 }
 
 
 //ввод
-int TicketArray::input() {
+int Apteka::input() {
 	int nlines = cur - begin();
 	if (nlines++ >= v.get_size()) return 0;
 	T* a;
@@ -47,7 +47,7 @@ int TicketArray::input() {
 
 
 //вывод
-void TicketArray::output() {
+void Apteka::output() {
 	cout << "=================================" << endl;
 	for (T** t = begin(); t != cur; t++) {
 		(*t)->OutputAll();
@@ -57,7 +57,7 @@ void TicketArray::output() {
 
 #include<algorithm>
 //сортировка
-void TicketArray::sort() {
+void Apteka::sort() {
 
 	for (int j = 0; j < cur - begin() - 1; j++)
 		for (int i = 0; i < cur - begin() - j - 1; i++)
@@ -77,7 +77,7 @@ void TicketArray::sort() {
 
 
 //удаление
-int TicketArray::remove(T* d) {
+int Apteka::remove(T* d) {
 	int n = 0;
 	for (int i = 0; i < lenght(); i++)
 		if ((v.item(i))->cmp(d) == 0)
@@ -97,7 +97,7 @@ int TicketArray::remove(T* d) {
 }
 
 
-int TicketArray::replace(T* Old, T* New) {
+int Apteka::replace(T* Old, T* New) {
 
 	int n = 0;
 	for (int i = 0; i < lenght(); i++)
@@ -112,7 +112,7 @@ int TicketArray::replace(T* Old, T* New) {
 
 
 //поиск, который возвращает позицию
-int TicketArray::search(T* item) {
+int Apteka::search(T* item) {
 
 	T** i;
 	for (i = begin(); i < cur; i++)
@@ -125,7 +125,7 @@ int TicketArray::search(T* item) {
 
 
 //деструктор
-TicketArray::~TicketArray() {
+Apteka::~Apteka() {
 
 	for (T** t = begin(); t != cur; t++)
 		delete* t;
@@ -133,17 +133,17 @@ TicketArray::~TicketArray() {
 
 }
 
-T** TicketArray::begin()
+T** Apteka::begin()
 {
 	return v.begin();
 }
 
-T** TicketArray::end()
+T** Apteka::end()
 {
 	return cur;
 }
 
-T** TicketArray::insert(T* t)
+T** Apteka::insert(T* t)
 {
 	if (lenght() >= v.get_size()) return 0;
 	*cur++ = t->copy();
@@ -151,12 +151,12 @@ T** TicketArray::insert(T* t)
 
 }
 
-int TicketArray::lenght()
+int Apteka::lenght()
 {
 	return cur - v.begin();
 }
 
-void TicketArray::erase(int p)
+void Apteka::erase(int p)
 {
 	T** t; T** k;
 	k = t = new T * [lenght() - 1];
@@ -168,7 +168,7 @@ void TicketArray::erase(int p)
 		*cur++ = (*k)->copy();
 }
 
-int TicketArray::search1(MyString a)
+int Apteka::search1(MyString a)
 {
 	for (int i = 0; i < cur - v.begin() - 1; i++)
 	{
@@ -180,10 +180,10 @@ int TicketArray::search1(MyString a)
 	return -1;
 }
 
-int TicketArray::replace1(int index)
+int Apteka::replace1(int index)
 {
 
-	Ticket* rep = new Ticket();
+	Medicine* rep = new Medicine();
 
 	rep->inputAll();
 	*(v.begin() + index) = rep;
@@ -201,7 +201,7 @@ int TicketArray::replace1(int index)
 	return 1;*/
 }
 
-T* TicketArray::search2(MyString a)
+T* Apteka::search2(MyString a)
 {
 
 	for (int i = 0; i < cur - v.begin() - 1; i++)
@@ -214,7 +214,7 @@ T* TicketArray::search2(MyString a)
 	return nullptr;
 }
 
-T* TicketArray::search3(MyString a)
+T* Apteka::search3(MyString a)
 {
 	T** i;
 	for (i = begin(); i < cur; i++)

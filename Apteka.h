@@ -1,12 +1,12 @@
 #pragma once
-#include "Ticket.h"
+#include "Medicine.h"
 #include "vec.h"
-class TicketArray {
+class Apteka {
 private:
 	vec v;
 	T** cur;
 public:
-	TicketArray(int n);
+	Apteka(int n);
 
 
 	int remove(T* d);
@@ -16,7 +16,7 @@ public:
 	void sort();
 	int input();
 	void output();
-	~TicketArray();
+	~Apteka();
 
 	T** begin();
 	T** end();

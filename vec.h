@@ -1,6 +1,6 @@
 #pragma once
-#include "Ticket.h"
-typedef Ticket T;
+#include "Medicine.h"
+typedef Medicine T;
 class vec
 {
 	T** v;

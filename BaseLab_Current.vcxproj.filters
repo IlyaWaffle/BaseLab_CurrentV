@@ -21,13 +21,13 @@
     <ClCompile Include="MyString.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Ticket.cpp">
+    <ClCompile Include="Medicine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="vec.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TicketTable.cpp">
+    <ClCompile Include="MedicineTable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MyDate.cpp">
@@ -38,13 +38,13 @@
     <ClInclude Include="MyString.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Ticket.h">
+    <ClInclude Include="Medicine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="vec.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TicketTable.h">
+    <ClInclude Include="Apteka.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MyDate.h">
