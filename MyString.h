@@ -27,8 +27,26 @@ public:
             out << right.s[i];
         return out;
     }
-    char* operator+ (const MyString& right);
+    friend istream& operator>> (istream& in, MyString& right)
+    {
+        char temp[254];
+        in >> temp;
+        int n = 0;
+        while (temp[n] != 0)
+            n++;
+        right.s = new char[n];
+        for (int i = 0; i < n; i++)
+            right.s[i] = temp[i];
+        right.len = n;
+        return in;
+    }
     MyString& operator= (const MyString& right);
-    MyString& operator+= (const MyString& right);
     bool operator==(const MyString& right);
+    bool operator>=(const MyString& right);
+    bool operator<=(const MyString& right);
+
+    char* operator+ (const MyString& right);
+    MyString& operator+= (const MyString& right);
+    
+
 };

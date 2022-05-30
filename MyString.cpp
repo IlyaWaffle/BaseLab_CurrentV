@@ -78,7 +78,6 @@ int MyString::equal(const MyString& t)
 }
 int MyString::input()
 {
-
 	if (cin.eof())return 0;
 	char buf1[256];
 	cin.getline(buf1, 254);
@@ -95,7 +94,8 @@ void MyString::output() {
 	cout << endl;
 }
 
-char* MyString::operator+ (const MyString& right) {
+char* MyString::operator+ (const MyString& right) 
+{
 	char* temp = new char[len + right.len];
 
 	cout << len << " " << right.len << " " << len + right.len;
@@ -109,7 +109,8 @@ char* MyString::operator+ (const MyString& right) {
 	return temp;
 }
 
-MyString& MyString::operator=(const MyString& right) {
+MyString& MyString::operator=(const MyString& right) 
+{
 	if (this == &right && &right == NULL)
 		return *this;
 	s = new char[right.len];
@@ -120,7 +121,8 @@ MyString& MyString::operator=(const MyString& right) {
 	return *this;
 }
 
-MyString& MyString::operator+= (const MyString& right) {
+MyString& MyString::operator+= (const MyString& right) 
+{
 	char* temp = new char[len + right.len];
 
 	for (int i = 0; i < len; i++) {
@@ -134,9 +136,26 @@ MyString& MyString::operator+= (const MyString& right) {
 	return *this;
 }
 
-bool MyString::operator==(const MyString& right) {
+bool MyString::operator==(const MyString& right) 
+{
 	if (len != right.len) return false;
 	for (int i = 0; i < len; i++)
 		if (s[i] != right.s[i]) return false;
 	return true;
+}
+
+bool MyString::operator>=(const MyString& right)
+{
+	if (this->len >= right.len)
+		return true;
+	else
+		return false;
+}
+
+bool MyString::operator<=(const MyString& right)
+{
+	if (this->len <= right.len)
+		return true;
+	else
+		return false;
 }

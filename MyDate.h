@@ -50,4 +50,17 @@ public:
 	int cmp(const MyDate& t);
 	int input();
 	int output();
+
+	friend ostream& operator<< (ostream& out, MyDate& right)
+	{
+		const char* s = MonthName[right.month];
+		const char* ss = right.get_DayOfWeek();
+		out << right.day << " (" << ss << ") " << s << " (" << right.month << ") " << right.year << endl;
+		return out;
+	}
+	/*friend istream& operator>> (istream& in, MyDate& right)
+	{
+		return in;
+	}*/
+
 };

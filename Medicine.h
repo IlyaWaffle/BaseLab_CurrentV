@@ -33,4 +33,24 @@ public:
     void inputAll();
     void OutputAll();
     int cmp(Medicine* t);
+
+    friend ostream& operator<< (ostream& out, Medicine& right) 
+    {
+        out << "Имя препарата: " << right.name;
+        out << "Группа препарата: " << right.group;
+        //cout << "Дата поставки препарата: " << right.date;
+        out << "Количество препаратов: " << right.count;
+        out << "Стоимость препарата: " << right.price;
+        return out;
+    }
+    friend istream& operator>> (istream& in, Medicine& right)
+    {
+        
+    }
+
+    Medicine& operator= (const Medicine& right);
+
+    bool operator==(const Medicine& right);
+    bool operator>=(const Medicine& right);
+    bool operator<=(const Medicine& right);
 };

@@ -9,6 +9,24 @@ using namespace std;
 int main() {
     setlocale(LC_ALL, "rus");
 
+    /*Medicine a;
+    a.setOwner(MyString("Abc"));
+    a.setGroup(MyString("B"));
+    a.setCount(40);
+    a.setOwner(120);
+    MyDate date;
+    date.input();
+    a.setOwner(date);
+
+    cout << a;*/
+
+    MyDate date;
+    date.input();
+
+    cout << date;
+
+
+    /*
     cout << "Введите количество препаратов: ";
     int n;
     cin >> n;
@@ -71,7 +89,7 @@ int main() {
         default: cout << "Ошибка" << endl;
         }
         }
-    }
+    }*/
 
     return 0;
 }
