@@ -27,7 +27,7 @@
     <ClCompile Include="vec.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MedicineTable.cpp">
+    <ClCompile Include="Apteka.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MyDate.cpp">

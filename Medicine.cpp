@@ -3,8 +3,8 @@
 #include <iostream>
 using namespace std;
 
-Medicine::Medicine(MyString _name, MyString _group, int day, int month, int year, double _price) :
-	name(_name), gropu(_group), date{ day, month, year }, price(_price) // Список инициализации
+Medicine::Medicine(MyString _name, MyString _group, int day, int month, int year, double _price, double _count) :
+	name(_name), group(_group), date{ day, month, year }, price(_price), count(_count) // Список инициализации
 {}
 
 Medicine::~Medicine()
@@ -17,7 +17,7 @@ Medicine::Medicine(const Medicine& a)
 	group = a.group;
 	date = a.date;
 	price = a.price;
-
+	count = a.count;
 }
 
 Medicine::Medicine()
@@ -82,10 +82,13 @@ int Medicine::cmp(Medicine* t)
 		if ((price - t->price) != 0)
 			return price - t->price;
 		else
-			if (Group.cmp(t->group) != 0)
+			if (group.cmp(t->group) != 0)
 				return group.cmp(t->group);
 			else
 				if (date.cmp(t->date) != 0)
 					return date.cmp(t->date);
+				else
+					if ((count - t->count) != 0)
+						return count - t->count;
 }
 

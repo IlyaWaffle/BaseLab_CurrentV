@@ -13,7 +13,7 @@ int main() {
     int n;
     cin >> n;
 
-    Apteka Medicine(n);
+    Apteka medicines(n);
 
     int i;
     while (1) {
@@ -21,11 +21,11 @@ int main() {
         switch (i)
         {
         case 1: {
-            Medicine.input();
+            medicines.input();
         }
               break;
         case 2: {
-            Medicine.output();
+            medicines.output();
             break;
         }
 
@@ -38,31 +38,31 @@ int main() {
             cout << "Введите параметры нового препарата : " << endl;
             Medicine* New = new Medicine;
             New->inputAll();
-            Medicine.replace(Old, New);
+            medicines.replace(Old, New);
         }
               break;
         case 4: {
             char name[25];
             cout << "Введите имя препарата: " << endl;
             cin >> name;
-            if (Medicine.search3((MyString)((char*)name)))
+            if (medicines.search3((MyString)((char*)name)))
             {
 
                 cout << "Препарат " << name << " найден" << endl;
-                cout << "Его номер в списке " << Medicine.search3((MyString)((char*)name)) << endl;
+                cout << "Его номер в списке " << medicines.search3((MyString)((char*)name)) << endl;
             }
         }
               break;
         case 5: {
-            Medicine.sort();
-            cout << "Препараты отсортированы по возрастанию цены" << endl;
+            medicines.sort();
+            cout << "Препараты отсортированы по возрастанию количества" << endl;
             break;
         }
         case 6: {
             char name[25];
             cout << "Введите имя препарата, который необходимо удалить: " << endl;
             cin >> name;
-            Medicine.remove(Medicine.search3((MyString)((char*)name)));
+            medicines.remove(medicines.search3((MyString)((char*)name)));
         }
               break;
         case 7: {
