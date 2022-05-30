@@ -20,13 +20,13 @@ int main() {
 
     cout << a;*/
 
-    MyDate date;
-    date.input();
+    //MyDate date;
+    //date.input();
 
-    cout << date;
+    //cout << date;
 
 
-    /*
+    
     cout << "Введите количество препаратов: ";
     int n;
     cin >> n;
@@ -69,6 +69,8 @@ int main() {
                 cout << "Препарат " << name << " найден" << endl;
                 cout << "Его номер в списке " << medicines.search3((MyString)((char*)name)) << endl;
             }
+            else
+                cout << "Такого препарата не найдено" << endl;
         }
               break;
         case 5: {
@@ -89,7 +91,7 @@ int main() {
         default: cout << "Ошибка" << endl;
         }
         }
-    }*/
+    }
 
     return 0;
 }

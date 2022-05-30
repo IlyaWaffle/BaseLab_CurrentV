@@ -51,7 +51,7 @@ public:
 	int input();
 	int output();
 
-	friend ostream& operator<< (ostream& out, MyDate& right)
+	/*friend ostream& operator<< (ostream& out, MyDate& right)
 	{
 		const char* s = MonthName[right.month];
 		const char* ss = right.get_DayOfWeek();
