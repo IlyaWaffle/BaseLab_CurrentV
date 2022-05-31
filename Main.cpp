@@ -9,6 +9,12 @@ using namespace std;
 int main() {
     setlocale(LC_ALL, "rus");
 
+
+    Ticket a;
+    cin >> a;
+    cout << a;
+
+    /*
     cout << "¬ведите количество билетов";
     int n;
     cin >> n;
@@ -23,7 +29,7 @@ int main() {
         case 1: {
             ticket.input();
         }
-              break;
+        break;
         case 2: {
             ticket.output();
             break;
@@ -40,38 +46,39 @@ int main() {
             New->inputAll();
             ticket.replace(Old, New);
         }
-              break;
+        break;
         case 4: {
-            char name[25];
-            cout << "¬ведите им€ пассажира: " << endl;
+            char* name = new char[254];
+            cout << "¬ведите им€ пассажира: ";
             cin >> name;
-            if (ticket.search3((MyString)((char*)name)))
+            cout << endl;
+            if (ticket.search3(name))
             {
 
                 cout << "Ѕилет " << name << " найден" << endl;
-                cout << "≈го номер в списке " << ticket.search3((MyString)((char*)name)) << endl;
+                cout << "≈го номер в списке " << ticket.search3(name) << endl;
             }
         }
-              break;
+        break;
         case 5: {
             ticket.sort();
             cout << "Ѕилеты отсортированы по возрастанию цены" << endl;
             break;
         }
         case 6: {
-            char name[25];
+            char* name = new char[254];
             cout << "¬ведите им€ пассажира, чей билет необходимо удалить: " << endl;
             cin >> name;
-            ticket.remove(ticket.search3((MyString)((char*)name)));
+            ticket.remove(ticket.search3(name));
         }
-              break;
+        break;
         case 7: {
             exit(0);
             break;
         default: cout << "ќшибка" << endl;
         }
         }
-    }
+    }*/
 
     return 0;
 }

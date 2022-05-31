@@ -140,3 +140,18 @@ bool MyString::operator==(const MyString& right) {
 		if (s[i] != right.s[i]) return false;
 	return true;
 }
+
+istream& operator>> (istream& in, MyString& right)
+{
+	char buf[255];
+	in.get(buf, 255, '\n');
+	right.s = buf;
+	return in;
+}
+
+ostream& operator<< (ostream& out, MyString& right)
+{
+	for (int i = 0; i < right.len; i++)
+		out << right.s[i];
+	return out;
+}

@@ -22,11 +22,9 @@ public:
     int input();
     void output();
 
-    friend ostream& operator<< (ostream& out, MyString& right) {
-        for (int i = 0; i < right.len; i++)
-            out << right.s[i];
-        return out;
-    }
+    friend ostream& operator<< (ostream& out, MyString& right);
+    friend istream& operator>> (istream& in, MyString& right);
+
     char* operator+ (const MyString& right);
     MyString& operator= (const MyString& right);
     MyString& operator+= (const MyString& right);

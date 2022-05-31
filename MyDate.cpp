@@ -180,3 +180,10 @@ long MyDate::get_AllDays()
 	}
 	return d;
 }
+
+/*ostream& operator<< (ostream& out, MyDate& right)
+{
+	const char* s = right.MonthName[right.month],
+		* ss = right.get_DayOfWeek();
+	cout << right.day << " (" << ss << ") " << s << " (" << right.month << ") " << right.year << endl;
+}*/

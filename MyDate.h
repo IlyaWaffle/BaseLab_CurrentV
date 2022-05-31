@@ -4,6 +4,7 @@ class MyDate
 {
 	int day, month, year;
 	static int daytab[2][13];
+public:
 	static const char* MonthName[13];
 	static const char* DayNames[8];
 public:
@@ -50,4 +51,7 @@ public:
 	int cmp(const MyDate& t);
 	int input();
 	int output();
+
+	//friend ostream& operator<< (ostream& out, MyDate& right);
+	//friend istream& operator>> (istream& in, MyDate& right);
 };

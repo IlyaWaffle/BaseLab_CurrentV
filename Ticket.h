@@ -30,4 +30,7 @@ public:
     void inputAll();
     void OutputAll();
     int cmp(Ticket* t);
+
+    friend ostream& operator<< (ostream& out, Ticket& right);
+    friend istream& operator>> (istream& in, Ticket& right);
 };

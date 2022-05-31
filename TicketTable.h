@@ -27,8 +27,7 @@ public:
 	int search1(MyString a);
 	int replace1(int index);
 	T* search2(MyString a);
-	T* search3(MyString a);
-
+	T* search3(char* a);
 
 };
 

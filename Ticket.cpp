@@ -84,3 +84,26 @@ int Ticket::cmp(Ticket* t)
 					return date.cmp(t->date);
 }
 
+istream& operator>> (istream& in, Ticket& right)
+{
+	cout << "Введите имя: ";
+	right.name.input();
+	cout << endl << "Введите аэропорт: ";
+	right.airport.input();
+	right.date.input();
+	cout << "Введите цену: ";
+	cin >> right.price;
+	cout << endl;
+	return in;
+}
+
+ostream& operator<< (ostream& out, Ticket& right)
+{
+	out << "Имя: " << right.name << endl;
+	out << "Аэропорт: " << right.airport << endl;
+	
+	const char* s = right.date.MonthName[right.date.get_month()];
+	const char* ss = right.date.get_DayOfWeek();
+	out << "Дата: " << right.date.get_day() << " (" << ss << ") " << s << " (" << right.date.get_month() << ") " << right.date.get_year() << endl;
+	return out;
+}

@@ -214,7 +214,7 @@ T* TicketArray::search2(MyString a)
 	return nullptr;
 }
 
-T* TicketArray::search3(MyString a)
+T* TicketArray::search3(char* a)
 {
 	T** i;
 	for (i = begin(); i < cur; i++)
