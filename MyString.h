@@ -21,7 +21,6 @@ public:
     int equal(const MyString&);
     int input();
     void output();
-
     friend ostream& operator<< (ostream& out, MyString& right) {
         for (int i = 0; i < right.len; i++)
             out << right.s[i];
@@ -47,6 +46,4 @@ public:
 
     char* operator+ (const MyString& right);
     MyString& operator+= (const MyString& right);
-    
-
 };

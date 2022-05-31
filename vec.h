@@ -15,4 +15,8 @@ public:
 	vec(const vec&);
 	T*& item(int);
 	void resize(int);
+	friend ostream& operator<< (ostream& out, vec& right) {
+		out << "Privet";
+		return out;
+	}
 };

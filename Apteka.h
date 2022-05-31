@@ -28,7 +28,10 @@ public:
 	int replace1(int index);
 	T* search2(MyString a);
 	T* search3(MyString a);
-
+	friend ostream& operator<< (ostream& out, Apteka& right) {
+		out << "Privet";
+		return out;
+	}
 
 };
 

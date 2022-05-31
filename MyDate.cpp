@@ -1,7 +1,8 @@
 #pragma once
 #include "MyDate.h"
 #include <iostream>
-#pragma warning(disable : 4996)
+#include <string>
+
 using namespace std;
 MyDate::MyDate()
 {
@@ -99,7 +100,7 @@ int MyDate::daytab[2][13] = { {0,31,28,31,30,31,30,31,31,30,31,30,31},{0,31,29,3
 const char* MyDate::MonthName[13] = { "null","January","February","March","April","May","June","July","August","September","October","November","December" };
 
 
-const char* MyDate::DayNames[8] = { "null","Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday" };
+const char* MyDate::DayNames[8] = {"null","Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
 
 
 int MyDate::validate()
@@ -158,8 +159,12 @@ int MyDate::output()
 
 char* MyDate::get_DayOfWeek() {
 	long dd = (get_AllDays()) % 7 + 1;
-	char* s = new char[strlen(DayNames[dd]) + 1];
-	strcpy(s, DayNames[dd]);
+	int n = 0;
+	while (DayNames[n] != NULL)
+		n++;
+	char* s = new char[n + 1];
+	for (int i = 0; i < n; i++)
+		s[i] = (char)DayNames[dd][i];
 	return s;
 }
 
